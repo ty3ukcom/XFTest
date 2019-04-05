@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:BaseMainView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFTest.Views"
+                    
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
+             x:Class="XFTest.Views.MainView">
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout>
+            <material:MaterialCard Elevation="4"
+                               HorizontalOptions="FillAndExpand"
+                               IsClickable="True"
+                               IsClippedToBounds="False"
+                               VerticalOptions="FillAndExpand">
+                <StackLayout>
+                    <material:MaterialLabel Text="Original buttons" />
+                    <Button 
+                                         Text="{Binding ShowRecordLabel}"
+                                         Command="{Binding MakeStartRecord}"/>
+                    <Button
+                                         Text="{Binding ShowStopLabel}"
+                                         Command="{Binding MakeStop}"/>
+                    <Button
+                                         Text="{Binding ShowPlayLabel}"
+                                         Command="{Binding MakePlay}"/>
+                </StackLayout>
+
+            </material:MaterialCard>
+            <material:MaterialCard Elevation="4"
+                               HorizontalOptions="FillAndExpand"
+                               IsClickable="True"
+                               IsClippedToBounds="False"
+                               VerticalOptions="FillAndExpand">
+                <StackLayout>
+                    <material:MaterialLabel Text="Default style" />
+                    <material:MaterialButton
+                                         Text="{Binding ShowRecordLabel}"
+                                         Command="{Binding MakeStartRecord}"/>
+                    <material:MaterialButton
+                                         Text="{Binding ShowStopLabel}"
+                                         Command="{Binding MakeStop}"/>
+                    <material:MaterialButton
+                                         Text="{Binding ShowPlayLabel}"
+                                         Command="{Binding MakePlay}"/>
+                </StackLayout>
+
+            </material:MaterialCard>
+            <material:MaterialCard Elevation="4"
+                               HorizontalOptions="FillAndExpand"
+                               IsClickable="True"
+                               IsClippedToBounds="False"
+                               VerticalOptions="FillAndExpand"
+                               BackgroundColor="{StaticResource ReverseBackground}">
+                <StackLayout>
+                    <material:MaterialLabel Style="{StaticResource Style.ML}" Text="Alternative style" />
+                    <material:MaterialButton
+                         Style="{StaticResource Style.MB}"
+                                         Text="{Binding ShowRecordLabel}"
+                                         Command="{Binding MakeStartRecord}"/>
+                    <material:MaterialButton
+                         Style="{StaticResource Style.MB}"
+                                         Text="{Binding ShowStopLabel}"
+                                         Command="{Binding MakeStop}"/>
+                    <material:MaterialButton
+                         Style="{StaticResource Style.MB}"
+                                         Text="{Binding ShowPlayLabel}"
+                                         Command="{Binding MakePlay}"/>
+                </StackLayout>
+            </material:MaterialCard>
+        </StackLayout>
+    </ScrollView>
+</local:BaseMainView>
